@@ -17,7 +17,7 @@ Mi proyecto insignia. Una plataforma e-commerce headless para arte fino con foco
 - **Tech**: Next.js 16, React 19, Strapi v5, PostgreSQL, Docker, Dokploy.
 - **Highlights**: Sistema de reservas atómicas de inventario para evitar condiciones de carrera (*race conditions*), e ISR bajo demanda mediante webhooks.
 
-#### ⚡ [WebP Image Converter & Compressor](https://github.com/fernandojavierp/compresor-webp)
+#### ⚡ [WebP Image Converter & Compressor](https://image-compressor-fernandojavierps-projects.vercel.app/)
 Herramienta de compresión local en el cliente (client-side) desarrollada para optimizar el flujo de trabajo del equipo de BF4 Gallery.
 - **Tech**: HTML5, Vanilla CSS (Glassmorphism), JavaScript (Canvas API, FileReader API, JSZip, UTIF.js).
 - **Highlights**: Procesamiento 100% en el navegador (privacidad total) con soporte para TIFF y HEIC.
