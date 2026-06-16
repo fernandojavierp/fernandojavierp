@@ -186,13 +186,13 @@ main {
 
 .btn-primary {
   background: var(--primary-gradient);
-  color: #fff;
-  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+  color: var(--bg-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
 }
 
 .btn-secondary {
