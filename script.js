@@ -127,4 +127,30 @@ document.addEventListener('DOMContentLoaded', () => {
       toast.classList.remove('show');
     }, 4000);
   }
+
+  // 5. Mobile Menu Toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
+  const navLinksList = document.querySelectorAll('nav ul li a');
+
+  if (menuToggle && nav) {
+    const toggleMenu = () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      menuToggle.classList.toggle('active');
+      nav.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    };
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking on a link
+    navLinksList.forEach(link => {
+      link.addEventListener('click', () => {
+        if (nav.classList.contains('active')) {
+          toggleMenu();
+        }
+      });
+    });
+  }
 });
