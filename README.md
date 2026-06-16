@@ -12,7 +12,7 @@ Desarrollador Full Stack afincado en Barcelona. Me apasiona construir arquitectu
 
 ### 🌟 Proyectos Destacados
 
-#### 🎨 [BF4 Gallery](https://github.com/fernandojavierp/bf4gallery)
+#### 🎨 [BF4 Gallery](https://www.bf4gallery.com/)
 Mi proyecto insignia. Una plataforma e-commerce headless para arte fino con foco en rendimiento crítico, animaciones fluidas y lógica compleja.
 - **Tech**: Next.js 16, React 19, Strapi v5, PostgreSQL, Docker, Dokploy.
 - **Highlights**: Sistema de reservas atómicas de inventario para evitar condiciones de carrera (*race conditions*), e ISR bajo demanda mediante webhooks.
