@@ -5,7 +5,7 @@ Desarrollador Full Stack afincado en Barcelona. Me apasiona construir arquitectu
 ### 🛠️ Mi Stack Tecnológico
 - **Frontend**: Next.js 16 (App Router), React 19, JavaScript (ES6+), Tailwind CSS v4, Framer Motion, Vanilla CSS.
 - **Backend & DB**: Strapi v5 (Headless CMS), Node.js, PostgreSQL.
-- **DevOps & Cloud**: Docker, Dokploy, VPS Ubuntu, Traefik (Reverse Proxy), Cloudflare R2 / Cloudinary, GitHub Actions (CI/CD).
+- **DevOps & Cloud**: Docker, Dokploy, VPS Ubuntu, Traefik (Reverse Proxy), Cloudflare R2, GitHub Actions (CI/CD).
 - **Herramientas & APIs**: Stripe API, Resend, Sharp, Canvas API.
 
 ---
