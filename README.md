@@ -45,6 +45,13 @@ Herramienta web client-side desarrollada para el equipo editorial de la galería
 - **Stack:** JavaScript nativo, Canvas API, Web Workers, PDF.js, FileReader API, JSZip, UTIF.js, Glassmorphism UI.
 - **Procesamiento en el Navegador:** Conversión y compresión a WebP (90% de calidad) multiformato por lotes (incluyendo PDF multipágina, TIFF y HEIC) ejecutada 100% en el cliente sin transferir datos a servidores externos, garantizando privacidad y cero coste de computación en backend.
 
+#### 🎬 [jonathangarciaherrera.com](https://jonathangarciaherrera.com) — *Astro SSG & Cinematic Streaming Platform*
+Plataforma audiovisual y portfolio cinematográfico de autor diseñado con foco en narrativa visual e hiper-rendimiento.
+- **Stack:** Astro 5+, React 19, Sanity CMS (GROQ), Cloudflare R2, Cloudflare Pages, GSAP 3, Tailwind CSS v4.
+- **Rendimiento Edge:** Arquitectura de islas interactivas sobre HTML estático puro (SSG) con hidratación selectiva de micro-animaciones (GSAP / Lenis / Framer Motion).
+- **Zero-Egress Media Streaming:** Infraestructura de distribución multimedia basada en Cloudflare R2 y un reproductor de vídeo propio, evitando publicidad y sobrecostes de transferencia de datos.
+- **Headless Content Hub:** Gestión de catálogo y taxonomías audiovisuales en Sanity Studio sincronizado en tiempo de compilación.
+
 ---
 
 ### 📬 Conectemos
