@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fernando Patete — Full Stack Developer & UX/UI Enthusiast</title>
+  <title>Fernando Patete — Full Stack Engineer | SDD & AI-Assisted Architecture</title>
   <meta name="description"
-    content="Portfolio profesional de Fernando Javier Patete González. Desarrollador Full Stack enfocado en Next.js, React, Node.js y diseño de experiencias premium.">
+    content="Portfolio profesional de Fernando Patete. Full Stack Engineer en Barcelona especializado en Spec-Driven Development (SDD), AI-Assisted Architecture, Next.js, React, Node.js y sistemas escalables en producción.">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,8 +23,9 @@
         <ul>
           <li><a href="#inicio" class="active">Inicio</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
-          <li><a href="#experiencia">Experiencia</a></li>
-          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#principios">Principios</a></li>
+          <li><a href="#skills">Stack</a></li>
+          <li><a href="#experiencia">Trayectoria</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
@@ -43,10 +44,10 @@
     <section id="inicio" class="hero">
       <div class="hero-glow"></div>
       <div class="badge">
-        <span>✦</span> Full Stack Developer & UX/UI Enthusiast
+        <span>✦</span> Full Stack Engineer & DJI Technical Specialist | Barcelona
       </div>
       <h1>Fernando Javier<br><span>Patete González</span>.</h1>
-      <p>Desarrollador Full Stack residente en Barcelona con una profunda motivación por el aprendizaje continuo y la evolución técnica. Combino la robustez de la ingeniería de software con una gran pasión por explotar mi creatividad en el diseño visual y la optimización de rendimiento crítico en web, buscando aportar soluciones innovadoras en entornos de branding de alto nivel.</p>
+      <p>Diseño y construyo sistemas web escalables en producción combinando ingeniería de software rigurosa con <strong>Spec-Driven Development (SDD)</strong>, arquitecturas Headless CMS y DevOps autogestionado. Además, aporto especialización técnica de campo en el <strong>ecosistema audiovisual y drones DJI</strong>, certificado por AESA (A1/A2/A3 y STS).</p>
 
       <div class="cta-group">
         <button id="btn-pdf" class="btn btn-primary no-print">
@@ -58,21 +59,23 @@
             <line x1="16" y1="17" x2="8" y2="17"></line>
             <polyline points="10 9 9 9 8 9"></polyline>
           </svg>
-          Guardar como PDF / Imprimir
+          Guardar como PDF / CV
         </button>
-        <a href="#proyectos" class="btn btn-secondary">Ver Proyectos</a>
+        <a href="#proyectos" class="btn btn-secondary">Ver Proyectos en Producción</a>
+        <a href="#contacto" class="btn btn-secondary">Hablemos</a>
       </div>
     </section>
 
     <!-- Projects Section -->
     <section id="proyectos">
-      <h2 class="section-title">Proyectos Destacados</h2>
+      <h2 class="section-title">Proyectos Destacados en Producción</h2>
 
       <div class="project-filters no-print">
         <button class="filter-btn active" data-filter="all">Todos</button>
-        <button class="filter-btn" data-filter="flagship">Flagship (E-commerce)</button>
-        <button class="filter-btn" data-filter="freelance">Freelance</button>
+        <button class="filter-btn" data-filter="flagship">Flagship</button>
+        <button class="filter-btn" data-filter="streaming">Streaming & SSG</button>
         <button class="filter-btn" data-filter="utility">Herramientas</button>
+        <button class="filter-btn" data-filter="freelance">Freelance</button>
       </div>
 
       <div class="projects-grid">
@@ -82,174 +85,299 @@
             style="background-image: url('bf4gallery.png'); background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #ffffff;">
           </div>
           <div class="project-info">
-            <span class="project-tag">Proyecto Principal (Flagship)</span>
+            <div class="project-header-meta">
+              <span class="project-tag">Headless E-Commerce</span>
+              <a href="https://www.bf4gallery.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                bf4gallery.com &rarr;
+              </a>
+            </div>
             <h3>BF4 Gallery</h3>
-            <p>Plataforma de e-commerce y galería de arte premium bajo arquitectura Headless CMS. Cuenta con integración de la API de Stripe para procesamiento de pagos seguro y sistema de reservas atómicas (updateMany) para evitar condiciones de carrera (race conditions) en el inventario.</p>
-            <div style="margin-top: auto;">
-              <div class="project-tech" style="margin-bottom: 1rem;">
+            <p>Plataforma e-commerce headless de alta fidelidad diseñada para la gestión y venta de colecciones privadas y exposiciones de arte contemporáneo (piezas únicas).</p>
+            <ul class="project-highlights">
+              <li><strong>Atomic Inventory Lock:</strong> Bloqueos atómicos en PostgreSQL (<code>updateMany</code> condicional) para prevenir sobreventas bajo peticiones simultáneas (reserva temporal de 6 minutos en checkout).</li>
+              <li><strong>On-Demand ISR:</strong> Renderizado estático con revalidación instantánea bajo demanda mediante webhooks automáticos desde Strapi v5.</li>
+              <li><strong>Stripe & Resend:</strong> Gestión dinámica de impuestos (21% IVA comunitario vs. 0% exportación extra-UE) y notificaciones transaccionales.</li>
+              <li><strong>Infraestructura & CI/CD:</strong> Pipeline automatizado con GitHub Actions compilando a GHCR, orquestado en VPS con Dokploy tras Traefik con SSL automático.</li>
+            </ul>
+            <div class="project-footer">
+              <div class="project-tech">
                 <span class="tech-tag">Next.js 16</span>
                 <span class="tech-tag">React 19</span>
+                <span class="tech-tag">TypeScript</span>
                 <span class="tech-tag">Tailwind CSS v4</span>
-                <span class="tech-tag">Stripe API</span>
                 <span class="tech-tag">Strapi v5</span>
                 <span class="tech-tag">PostgreSQL</span>
                 <span class="tech-tag">Docker</span>
                 <span class="tech-tag">Dokploy</span>
                 <span class="tech-tag">Traefik</span>
+                <span class="tech-tag">Cloudflare R2</span>
+                <span class="tech-tag">Stripe API</span>
               </div>
-              <a href="https://bf4gallery.com" target="_blank"
-                style="font-weight: 600; color: var(--primary); font-size: 0.9rem;">Visitar bf4gallery.com &rarr;</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 2 - WebP Converter -->
+        <!-- Project 2 - Jonathan Garcia Herrera -->
+        <div class="project-card" data-category="streaming">
+          <div class="project-img icon-film"></div>
+          <div class="project-info">
+            <div class="project-header-meta">
+              <span class="project-tag">Astro SSG & Video</span>
+              <a href="https://jonathangarciaherrera.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                jonathangarciaherrera.com &rarr;
+              </a>
+            </div>
+            <h3>jonathangarciaherrera.com</h3>
+            <p>Plataforma audiovisual y portfolio cinematográfico de autor diseñado con foco en narrativa visual e hiper-rendimiento edge.</p>
+            <ul class="project-highlights">
+              <li><strong>Arquitectura de Islas (SSG):</strong> Renderizado estático puro con hidratación selectiva de micro-animaciones (GSAP 3 / Lenis / Framer Motion).</li>
+              <li><strong>Zero-Egress Streaming:</strong> Distribución multimedia en Cloudflare R2 con reproductor de vídeo propio, sin anuncios ni sobrecostes de transferencia.</li>
+              <li><strong>Headless Content Hub:</strong> Catálogo y taxonomías audiovisuales en Sanity Studio (GROQ) sincronizadas en build-time.</li>
+            </ul>
+            <div class="project-footer">
+              <div class="project-tech">
+                <span class="tech-tag">Astro 5+</span>
+                <span class="tech-tag">React 19</span>
+                <span class="tech-tag">Sanity CMS</span>
+                <span class="tech-tag">Cloudflare R2 / Pages</span>
+                <span class="tech-tag">GSAP 3</span>
+                <span class="tech-tag">Tailwind CSS v4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 - WebP Converter -->
         <div class="project-card" data-category="utility">
           <div class="project-img icon-lightning"></div>
           <div class="project-info">
-            <span class="project-tag">Optimización de Assets & Utilidad</span>
-            <h3>WebP Converter & Compressor</h3>
-            <p>Herramienta externa client-side que procesa, convierte y comprime catálogos de imágenes pesadas al
-              formato WebP (90% calidad) directamente en el navegador usando Canvas y FileReader API para BF4 Gallery.
-            </p>
-            <div style="margin-top: auto;">
-              <div class="project-tech" style="margin-bottom: 1rem;">
-                <span class="tech-tag">JavaScript (ES6+)</span>
+            <div class="project-header-meta">
+              <span class="project-tag">Client-Side Architecture</span>
+              <a href="https://image-compressor-fernandojavierps-projects.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+                Abrir App &rarr;
+              </a>
+            </div>
+            <h3>WebP Image Converter & Compressor</h3>
+            <p>Herramienta web client-side desarrollada para el equipo editorial de la galería para optimizar el flujo de catalogación previo a la subida al CMS y Cloudflare R2.</p>
+            <ul class="project-highlights">
+              <li><strong>Procesamiento en Navegador:</strong> Conversión y compresión a WebP (90% calidad) por lotes (incluyendo PDF multipágina, TIFF y HEIC).</li>
+              <li><strong>Zero-Backend Compute:</strong> Ejecución 100% en cliente sin transferir datos a servidores externos, garantizando privacidad total y cero coste de backend.</li>
+            </ul>
+            <div class="project-footer">
+              <div class="project-tech">
+                <span class="tech-tag">JavaScript Nativo</span>
                 <span class="tech-tag">Canvas API</span>
-                <span class="tech-tag">FileReader API</span>
-                <span class="tech-tag">Cloudflare R2</span>
+                <span class="tech-tag">Web Workers</span>
+                <span class="tech-tag">PDF.js</span>
+                <span class="tech-tag">JSZip & UTIF.js</span>
+                <span class="tech-tag">Glassmorphism UI</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Project 3 - danadiesendorf.com -->
+        <!-- Project 4 - danadiesendorf.com -->
         <div class="project-card" data-category="freelance">
           <div class="project-img has-bg"
             style="background-image: url('danadiesendorf.png'); background-size: cover; background-position: center;">
           </div>
           <div class="project-info">
-            <span class="project-tag">Proyecto Freelance</span>
+            <div class="project-header-meta">
+              <span class="project-tag">Portfolio Digital</span>
+              <a href="https://danadiesendorf.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                danadiesendorf.com &rarr;
+              </a>
+            </div>
             <h3>danadiesendorf.com</h3>
-            <p>Portafolio de arte enfocado en una experiencia visual premium e interactiva para la exposición de obras
-              físicas de forma digital.</p>
-            <div style="margin-top: auto;">
-              <div class="project-tech" style="margin-bottom: 1rem;">
+            <p>Portafolio de arte enfocado en una experiencia visual de alta fidelidad e interactiva para la exposición digital de obras físicas con diseño limpio y curado.</p>
+            <ul class="project-highlights">
+              <li><strong>Experiencia Visual Curada:</strong> Maquetación minimalista con tipografía editorial de alto impacto para destacar la obra pictórica.</li>
+              <li><strong>Rendimiento & Fluidez:</strong> Optimización de carga asíncrona de imágenes y navegación reactiva adaptada a dispositivos móviles y desktop.</li>
+            </ul>
+            <div class="project-footer">
+              <div class="project-tech">
                 <span class="tech-tag">UX/UI</span>
                 <span class="tech-tag">Interacciones Web</span>
-                <span class="tech-tag">Premium Design</span>
+                <span class="tech-tag">High-Fidelity Branding</span>
+                <span class="tech-tag">Responsive Web</span>
               </div>
-              <a href="https://danadiesendorf.com" target="_blank"
-                style="font-weight: 600; color: var(--primary); font-size: 0.9rem;">Visitar danadiesendorf.com
-                &rarr;</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 4 - terapiasalternativasmarbella.com -->
+        <!-- Project 5 - terapiasalternativasmarbella.com -->
         <div class="project-card" data-category="freelance">
           <div class="project-img has-bg"
-            style="background-image: url('terapiasmarbella.png'); background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #e4dcd0;">
+            style="background-image: url('terapiasmarbella.png'); background-size: cover; background-position: center; background-color: #f7f4ee;">
           </div>
           <div class="project-info">
-            <span class="project-tag">Proyecto Freelance</span>
-            <h3>Sitio Terapias Alternativas</h3>
-            <p>Sitio web informativo y plataforma de gestión de reservas integrales para un centro de salud integral en
-              Marbella.</p>
-            <div style="margin-top: auto;">
-              <div class="project-tech" style="margin-bottom: 1rem;">
+            <div class="project-header-meta">
+              <span class="project-tag">Web & Reservas</span>
+              <a href="https://terapiasalternativasmarbella.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                terapiasmarbella &rarr;
+              </a>
+            </div>
+            <h3>Centro de Terapias Integrales</h3>
+            <p>Plataforma web informativa y sistema de gestión de reservas optimizado para SEO local, alta tasa de conversión y experiencia responsive en Marbella.</p>
+            <ul class="project-highlights">
+              <li><strong>Embudo de Conversión Directo:</strong> Flujo de contacto y reserva directa de sesiones simplificado para maximizar la retención de pacientes.</li>
+              <li><strong>SEO Local & Performance:</strong> Estructura semántica HTML5 y microdatos locales para posicionamiento orgánico en el sector salud en Marbella.</li>
+            </ul>
+            <div class="project-footer">
+              <div class="project-tech">
                 <span class="tech-tag">Gestión de Reservas</span>
-                <span class="tech-tag">SEO</span>
-                <span class="tech-tag">Responsive Web</span>
+                <span class="tech-tag">SEO On-Page</span>
+                <span class="tech-tag">Conversión UX</span>
+                <span class="tech-tag">Responsive Design</span>
               </div>
-              <a href="https://terapiasalternativasmarbella.com" target="_blank"
-                style="font-weight: 600; color: var(--primary); font-size: 0.9rem;">Visitar
-                terapiasalternativasmarbella.com &rarr;</a>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Principles Section -->
+    <section id="principios">
+      <h2 class="section-title">Principios de Ingeniería & Flujo de Trabajo</h2>
+      <div class="principles-grid">
+        <div class="principle-card">
+          <span class="principle-icon">📐</span>
+          <h3>Spec-Driven Development (SDD)</h3>
+          <p>Descomposición metódica de requerimientos en especificaciones técnicas claras, tipadas y deterministas antes de la fase de implementación de código, reduciendo la ambigüedad a cero.</p>
+        </div>
+
+        <div class="principle-card">
+          <span class="principle-icon">🤖</span>
+          <h3>Context Architecture & AI Governance</h3>
+          <p>Configuración formal de reglas de contexto (<code>AGENTS.md</code>, contratos de API tipados, system prompts) para gobernar herramientas como Google Antigravity bajo Clean Architecture, patrones SOLID y Fail Fast.</p>
+        </div>
+
+        <div class="principle-card">
+          <span class="principle-icon">🛡️</span>
+          <h3>Auditoría & Criterio Técnico Riguroso</h3>
+          <p>Supervisión minuciosa del código generado para mitigar alucinaciones, brechas de seguridad, cuellos de botella de rendimiento y condiciones de carrera (<em>race conditions</em>) en bases de datos.</p>
+        </div>
+
+        <div class="principle-card">
+          <span class="principle-icon">⚡</span>
+          <h3>Resiliencia & Edge Performance</h3>
+          <p>Estrategias de renderizado estático e híbrido (On-Demand ISR, Astro SSG), validaciones defensivas en el borde y control estricto de transacciones atómicas.</p>
         </div>
       </div>
     </section>
 
     <!-- Experience / Resume Section -->
     <section id="experiencia">
-      <h2 class="section-title">Formación y Trayectoria</h2>
+      <h2 class="section-title">Trayectoria & Práctica Profesional</h2>
       <div class="timeline">
 
         <!-- Experience 1 -->
         <div class="timeline-item">
-          <div class="timeline-date">Formación Intensiva</div>
-          <h3 class="timeline-title">Desarrollador Full Stack</h3>
-          <div class="timeline-company">Conquer Blocks</div>
-          <p class="timeline-desc">Un año y seis meses de formación intensiva en desarrollo de software moderna, bases
-            de datos avanzadas, arquitecturas headless y despliegue real en producción.</p>
+          <div class="timeline-date">Ingeniería & Proyectos en Producción</div>
+          <h3 class="timeline-title">Full Stack Engineer & Arquitectura Independiente</h3>
+          <div class="timeline-company">Producción & Clientes Internacionales</div>
+          <p class="timeline-desc">Diseño e implementación de sistemas web de producción con arquitectura Headless CMS, micro-frontends e islas SSG (BF4 Gallery, Jonathan García Herrera, convertidores de alto rendimiento). Gestión integral de ciclo de vida con Docker, VPS Linux, CI/CD automatizado, SSL dinámico con Traefik y control de concurrencia a nivel de base de datos.</p>
         </div>
 
         <!-- Experience 2 -->
         <div class="timeline-item">
-          <div class="timeline-date">Freelance & Proyectos</div>
-          <h3 class="timeline-title">Despliegue y Desarrollo Independiente</h3>
-          <div class="timeline-company">Freelance</div>
-          <p class="timeline-desc">Despliegue e integración de proyectos reales en el mercado (e-commerce, portfolios
-            artísticos interactivos y aplicaciones web informativas/gestores de reservas).</p>
+          <div class="timeline-date">Soporte Técnico & Operaciones Aéreas</div>
+          <h3 class="timeline-title">DJI Technical Specialist & Operador AESA</h3>
+          <div class="timeline-company">Ecosistema DJI & Producción Audiovisual</div>
+          <p class="timeline-desc">Diagnóstico y soporte técnico integral en hardware de alto rendimiento DJI: cámaras, drones cinematográficos, estaciones de energía portátiles, estabilizadores (Ronin/Osmo) y sistemas de robótica. Piloto certificado por la Agencia Estatal de Seguridad Aérea (AESA) en categorías A1/A2/A3 y escenarios operacionales estándar (STS).</p>
+          <a href="https://sede.seguridadaerea.gob.es/CID/?identificador=AESASGEEPGEE000IIBKODAA3P32IDA" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 0.5rem; font-weight: 600; color: var(--primary); font-size: 0.85rem;">
+            Verificar credencial oficial en Sede Electrónica AESA &rarr;
+          </a>
+        </div>
+
+        <!-- Experience 3 -->
+        <div class="timeline-item">
+          <div class="timeline-date">Especialización & Fundamentos</div>
+          <h3 class="timeline-title">Especialización en Desarrollo Full Stack & Sistemas Modernos</h3>
+          <div class="timeline-company">Conquer Blocks</div>
+          <p class="timeline-desc">Año y medio de formación intensiva e inmersiva en principios de ingeniería de software, Clean Code, patrones arquitectónicos, diseño de bases de datos relacionales y no relacionales, seguridad web y orquestación en la nube.</p>
         </div>
       </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills">
-      <h2 class="section-title">Habilidades Técnicas</h2>
+      <h2 class="section-title">Stack Tecnológico & Capacidades</h2>
       <div class="skills-container">
 
-        <!-- Design & Tech Skills -->
+        <!-- Architecture & Principles -->
         <div class="skills-category">
-          <h3>
-            <span style="color: var(--primary);">✦</span> Lenguajes & Frameworks
-          </h3>
+          <h3>Arquitectura & Principios</h3>
           <div class="skills-list">
-            <div class="skill-item">
-              <span class="skill-name">JavaScript (ES6+) & TypeScript</span>
-              <span class="skill-level">Intermedio</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Next.js & React</span>
-              <span class="skill-level">Intermedio</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Node.js, HTML5 & CSS3</span>
-              <span class="skill-level">Intermedio</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Tailwind CSS (incl. v4)</span>
-              <span class="skill-level">Intermedio</span>
-            </div>
+            <span class="skill-tag">Spec-Driven Development (SDD)</span>
+            <span class="skill-tag">Clean Architecture</span>
+            <span class="skill-tag">Patrones SOLID</span>
+            <span class="skill-tag">Domain-Driven Design (DDD)</span>
+            <span class="skill-tag">Concurrencia & Bloqueo Atómico</span>
+            <span class="skill-tag">Principio Fail Fast</span>
           </div>
         </div>
 
-        <!-- Tools & Cloud -->
+        <!-- AI Workflows & Tooling -->
         <div class="skills-category">
-          <h3>
-            <span style="color: var(--primary);">✦</span> Herramientas & Cloud
-          </h3>
+          <h3>AI Workflows & Tooling</h3>
           <div class="skills-list">
-            <div class="skill-item">
-              <span class="skill-name">Git & GitHub Actions (CI/CD)</span>
-              <span class="skill-level">Intermedio</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Docker, Dokploy & Traefik VPS</span>
-              <span class="skill-level">Intermedio</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">PostgreSQL & Strapi CMS</span>
-              <span class="skill-level">Intermedio</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Cloudflare R2 & Stripe API</span>
-              <span class="skill-level">Intermedio</span>
-            </div>
+            <span class="skill-tag">Google Antigravity</span>
+            <span class="skill-tag">Model Context Protocol (MCP)</span>
+            <span class="skill-tag">Context Rules (AGENTS.md)</span>
+            <span class="skill-tag">System Prompts Estructurados</span>
+            <span class="skill-tag">Auditoría Técnica de IA</span>
           </div>
         </div>
+
+        <!-- Frontend & UI -->
+        <div class="skills-category">
+          <h3>Frontend & UI Engineering</h3>
+          <div class="skills-list">
+            <span class="skill-tag">Next.js 16 (App Router & RSC)</span>
+            <span class="skill-tag">React 19</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Astro 5+ (SSG Islands)</span>
+            <span class="skill-tag">On-Demand ISR</span>
+            <span class="skill-tag">Tailwind CSS v4</span>
+            <span class="skill-tag">Framer Motion & GSAP 3</span>
+            <span class="skill-tag">Vanilla CSS & Canvas API</span>
+          </div>
+        </div>
+
+        <!-- Backend, DB & DevOps -->
+        <div class="skills-category">
+          <h3>Backend, DB & Cloud</h3>
+          <div class="skills-list">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Strapi v5 (Headless CMS)</span>
+            <span class="skill-tag">Sanity CMS (GROQ)</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Docker & Docker Compose</span>
+            <span class="skill-tag">Dokploy</span>
+            <span class="skill-tag">VPS Linux (Ubuntu)</span>
+            <span class="skill-tag">Traefik (SSL Auto)</span>
+            <span class="skill-tag">Cloudflare (DNS, Pages, R2)</span>
+            <span class="skill-tag">GitHub Actions (CI/CD)</span>
+            <span class="skill-tag">Stripe API & Resend</span>
+          </div>
+        </div>
+
+        <!-- Drones & Audiovisual -->
+        <div class="skills-category">
+          <h3>Drones & Audiovisual</h3>
+          <div class="skills-list">
+            <span class="skill-tag">Soporte Técnico Ecosistema DJI</span>
+            <a href="https://sede.seguridadaerea.gob.es/CID/?identificador=AESASGEEPGEE000IIBKODAA3P32IDA" target="_blank" rel="noopener noreferrer" class="skill-tag is-link">
+              Piloto Certificado AESA (A1/A2/A3 & STS) ↗
+            </a>
+            <span class="skill-tag">Cámaras & Drones de Cine</span>
+            <span class="skill-tag">Estabilizadores Ronin & Osmo</span>
+            <span class="skill-tag">Estaciones de Energía DJI</span>
+            <span class="skill-tag">Robótica de Mantenimiento</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -258,9 +386,8 @@
       <h2 class="section-title">Contacto</h2>
       <div class="contact-container">
         <div class="contact-info">
-          <h3>¿Conectamos?</h3>
-          <p>Estoy ubicado en Barcelona, España. Si estás interesado en colaborar en un proyecto o integrar mis
-            habilidades en tu equipo, no dudes en escribirme.</p>
+          <h3>¿Hablamos de proyectos o soporte técnico?</h3>
+          <p>Ubicado en Barcelona, España. Abierto a oportunidades en ingeniería web de producción, arquitectura de software asistida por IA y soporte técnico experto en el ecosistema DJI.</p>
 
           <div class="contact-details">
             <div class="contact-item">
@@ -291,21 +418,29 @@
           </div>
         </div>
 
-        <form class="contact-form no-print" onsubmit="event.preventDefault();">
+        <form class="contact-form no-print">
+          <!-- Honeypot anti-spam field (hidden from real users, attractive to bots) -->
+          <div style="display: none !important; opacity: 0; position: absolute; left: -9999px; height: 0; width: 0;" aria-hidden="true">
+            <label for="company_website_hp">Leave this field blank</label>
+            <input type="text" id="company_website_hp" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
           <div class="form-group">
             <label for="name">Nombre</label>
-            <input type="text" id="name" placeholder="Tu nombre" required>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required autocomplete="name">
           </div>
           <div class="form-group">
             <label for="email">Correo electrónico</label>
-            <input type="email" id="email" placeholder="tu@correo.com" required>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required autocomplete="email">
           </div>
           <div class="form-group">
             <label for="message">Mensaje</label>
-            <textarea id="message" rows="4" placeholder="¿Cómo podemos colaborar?" required></textarea>
+            <textarea id="message" name="message" rows="4" placeholder="¿Cómo podemos colaborar?" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem; justify-content: center;">Enviar
-            Mensaje</button>
+          <button type="submit" id="btn-submit-contact" class="btn btn-primary" style="margin-top: 0.5rem; justify-content: center;">
+            <span class="btn-text">Enviar Mensaje</span>
+            <span class="btn-spinner" style="display: none; width: 16px; height: 16px; border: 2px solid rgba(0,0,0,0.3); border-top-color: currentColor; border-radius: 50%; animation: spin 0.8s linear infinite;"></span>
+          </button>
         </form>
       </div>
     </section>

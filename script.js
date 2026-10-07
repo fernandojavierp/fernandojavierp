@@ -71,16 +71,41 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      
+
+      // Honeypot Bot Detection
+      const honeypot = document.getElementById('company_website_hp');
+      if (honeypot && honeypot.value.trim() !== '') {
+        // Silent rejection for bots: simulate success without calling external API
+        console.warn('Bot submission blocked via Honeypot');
+        contactForm.reset();
+        showToast('¡Gracias! He recibido tu mensaje.');
+        return;
+      }
+
       const nameInput = document.getElementById('name');
       const emailInput = document.getElementById('email');
       const messageInput = document.getElementById('message');
-      
+      const submitBtn = document.getElementById('btn-submit-contact');
+      const btnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
+      const btnSpinner = submitBtn ? submitBtn.querySelector('.btn-spinner') : null;
+
       const name = nameInput ? nameInput.value.trim() : '';
       const email = emailInput ? emailInput.value.trim() : '';
       const message = messageInput ? messageInput.value.trim() : '';
-      
-      // Send message to FormSubmit AJAX endpoint
+
+      if (!name || !email || !message) {
+        showToast('Por favor, completa todos los campos.');
+        return;
+      }
+
+      // UI Loading state
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        if (btnText) btnText.textContent = 'Enviando...';
+        if (btnSpinner) btnSpinner.style.display = 'inline-block';
+      }
+
+      // Send message to FormSubmit AJAX endpoint with anti-spam params
       fetch('https://formsubmit.co/ajax/fpatetegonzalez@gmail.com', {
         method: 'POST',
         headers: {
@@ -90,7 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify({
           Nombre: name,
           Email: email,
-          Mensaje: message
+          Mensaje: message,
+          _subject: `Nuevo contacto web: ${name}`,
+          _template: 'table',
+          _captcha: 'false' // Disables reCAPTCHA redirect since we have our custom honeypot
         })
       })
       .then(response => {
@@ -104,6 +132,14 @@ document.addEventListener('DOMContentLoaded', () => {
       .catch(error => {
         showToast('Error de conexión. Inténtalo de nuevo.');
         console.error('Error de red:', error);
+      })
+      .finally(() => {
+        // Restore UI state
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          if (btnText) btnText.textContent = 'Enviar Mensaje';
+          if (btnSpinner) btnSpinner.style.display = 'none';
+        }
       });
     });
   }
@@ -152,5 +188,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+  }
+
+  // 6. Smooth Parallax Glow Follow on Scroll
+  const heroGlow = document.querySelector('.hero-glow');
+  if (heroGlow) {
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+          // Smooth parallax vertical shift & subtle horizontal drift
+          const translateY = scrollY * 0.45;
+          const translateX = Math.sin(scrollY * 0.002) * 40;
+          const scale = Math.max(0.7, 1 - (scrollY * 0.0003));
+          
+          heroGlow.style.transform = `translate3d(calc(-50% + ${translateX}px), ${translateY}px, 0) scale(${scale})`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
   }
 });
