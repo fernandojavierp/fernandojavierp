@@ -57,4 +57,3 @@ Plataforma audiovisual y portfolio cinematográfico de autor diseñado con foco 
 ### 📬 Conectemos
 - 💼 **LinkedIn**: [fernando-patete-gonzalez](https://www.linkedin.com/in/fernando-patete-gonzalez)
 - 📧 **Email**: [fpatetegonzalez@gmail.com](mailto:fpatetegonzalez@gmail.com)
-- 🌐 **Portfolio / Producción**: [bf4gallery.com](https://www.bf4gallery.com/)
