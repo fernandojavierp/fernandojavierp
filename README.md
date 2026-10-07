@@ -1,30 +1,53 @@
-# ¡Hola, soy Fernando Patete!
+# ¡Hola, soy Fernando Patete! 👋
 
-Desarrollador Full Stack afincado en Barcelona. Me apasiona construir arquitecturas web robustas, rápidas y visualmente impecables. Creo firmemente que el código excelente y el diseño interactivo (UX/UI) de alta fidelidad deben ir siempre de la mano.
+**Full Stack Engineer | Spec-Driven Development (SDD) & AI-Assisted Architecture**  
+📍 Barcelona, España
 
-### 🛠️ Mi Stack Tecnológico
-- **Frontend**: Next.js 16 (App Router), React 19, JavaScript (ES6+), Tailwind CSS v4, Framer Motion, Vanilla CSS.
-- **Backend & DB**: Strapi v5 (Headless CMS), Node.js, PostgreSQL.
-- **DevOps & Cloud**: Docker, Dokploy, VPS Ubuntu, Traefik (Reverse Proxy), Cloudflare R2, GitHub Actions (CI/CD).
-- **Herramientas & APIs**: Stripe API, Resend, Sharp, Canvas API.
+Diseño y construyo sistemas web modernos y escalables combinando fundamentos sólidos de ingeniería de software con flujos de trabajo asistidos por IA orientados a la producción.
+
+Aplico **Spec-Driven Development (SDD)**: formalizo la arquitectura, interfaces y reglas de contexto (`AGENTS.md`, contratos de API tipados, `.specs`) para dirigir herramientas avanzadas de IA (Google Antigravity) como multiplicadores de productividad técnica, auditando siempre con criterio de ingeniería la **seguridad, concurrencia, rendimiento y atomicidad**.
 
 ---
 
-### 🌟 Proyectos Destacados
+### 🧠 Principios de Ingeniería & Flujo de Trabajo
+- **Spec-Driven Development (SDD):** Descomposición de requerimientos en especificaciones técnicas claras y deterministas antes de la fase de implementación.
+- **Context Architecture & AI Governance:** Configuración de directrices (`AGENTS.md`, system prompts, workflows) para garantizar que los modelos sigan Clean Architecture, patrones SOLID y principios Fail Fast.
+- **Auditoría & Criterio Técnico:** Supervisión y verificación rigurosa del código generado para prevenir alucinaciones, brechas de seguridad, cuellos de botella de rendimiento y condiciones de carrera (*race conditions*).
+- **Resiliencia & Edge Performance:** Renderizado estático e híbrido (ISR), validaciones defensivas en el borde y control estricto de transacciones en base de datos.
 
-#### 🎨 [BF4 Gallery](https://www.bf4gallery.com/)
-Mi proyecto insignia. Una plataforma e-commerce headless para arte fino con foco en rendimiento crítico, animaciones fluidas y lógica compleja.
-- **Tech**: Next.js 16, React 19, Strapi v5, PostgreSQL, Docker, Dokploy.
-- **Highlights**: Sistema de reservas atómicas de inventario para evitar condiciones de carrera (*race conditions*), e ISR bajo demanda mediante webhooks.
+---
+
+### 🛠️ Stack Tecnológico
+
+| Capa | Tecnologías |
+| :--- | :--- |
+| **Arquitectura & Principios** | Spec-Driven Development (SDD), Clean Architecture, Domain-Driven Design (DDD), Concurrencia y Transaccionalidad |
+| **Frontend & UI** | Next.js 16 (App Router, Server Components, ISR), React 19, TypeScript, Tailwind CSS v4, Vanilla CSS, Framer Motion |
+| **Backend & Base de Datos** | Node.js, Strapi v5 (Headless CMS), PostgreSQL, REST APIs, Webhooks |
+| **Infraestructura & DevOps** | Docker & Compose, Dokploy, VPS Linux (Ubuntu), Traefik (Reverse Proxy, SSL automático), Cloudflare (DNS / R2), GitHub Actions (CI/CD con GHCR) |
+| **AI Workflows & Tooling** | Google Antigravity, MCP Servers, `AGENTS.md`, System Prompts estructurados |
+| **Integraciones & Servicios** | Stripe API, Resend API, Cloudflare R2 |
+
+---
+
+### 🌟 Proyectos Destacados en Producción
+
+#### 🎨 [BF4 Gallery](https://www.bf4gallery.com/) — *Headless Art E-Commerce*
+Plataforma e-commerce headless de alta fidelidad diseñada para la gestión y venta de colecciones privadas y exposiciones de arte contemporáneo (piezas únicas).
+- **Stack:** Next.js 16, React 19, TypeScript, Strapi v5, PostgreSQL, Docker, Dokploy, Cloudflare R2, Stripe, Resend.
+- **Control de Concurrencia (Atomic Inventory Lock):** Implementación de bloqueos atómicos a nivel de base de datos (`updateMany` condicional en PostgreSQL) para prevenir sobreventas bajo peticiones simultáneas, bloqueando la reserva temporalmente por 6 minutos durante el checkout.
+- **On-Demand ISR:** Estrategia de renderizado estático combinada con revalidación instantánea bajo demanda mediante webhooks automáticos desde Strapi al publicar o editar obras.
+- **Integraciones:** Stripe Checkout configurado con gestión dinámica de impuestos (21% IVA comunitario vs. 0% exportación extra-UE) y correos transaccionales automatizados con Resend.
+- **Infraestructura & CI/CD:** Despliegue continuo con GitHub Actions que compila imágenes a GHCR y orquesta el servicio en VPS mediante Dokploy tras Traefik con SSL automático.
 
 #### ⚡ [WebP Image Converter & Compressor](https://image-compressor-fernandojavierps-projects.vercel.app/)
-Herramienta de compresión local en el cliente (client-side) desarrollada para optimizar el flujo de trabajo del equipo de BF4 Gallery.
-- **Tech**: HTML5, Vanilla CSS (Glassmorphism), JavaScript (Canvas API, FileReader API, JSZip, UTIF.js).
-- **Highlights**: Procesamiento 100% en el navegador (privacidad total) con soporte para TIFF y HEIC.
+Herramienta web client-side desarrollada para el equipo editorial de la galería, orientada a optimizar el flujo de catalogación previo a la subida al CMS y Cloudflare R2.
+- **Stack:** JavaScript nativo, Canvas API, Web Workers, PDF.js, FileReader API, JSZip, UTIF.js, Glassmorphism UI.
+- **Procesamiento en el Navegador:** Conversión y compresión a WebP (90% de calidad) multiformato por lotes (incluyendo PDF multipágina, TIFF y HEIC) ejecutada 100% en el cliente sin transferir datos a servidores externos, garantizando privacidad y cero coste de computación en backend.
 
 ---
 
 ### 📬 Conectemos
 - 💼 **LinkedIn**: [fernando-patete-gonzalez](https://www.linkedin.com/in/fernando-patete-gonzalez)
-- 📧 **Email**: fpatetegonzalez@gmail.com
-- 📍 **Ubicación**: Barcelona, España
+- 📧 **Email**: [fpatetegonzalez@gmail.com](mailto:fpatetegonzalez@gmail.com)
+- 🌐 **Portfolio / Producción**: [bf4gallery.com](https://www.bf4gallery.com/)
